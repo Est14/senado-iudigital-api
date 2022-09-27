@@ -25,7 +25,9 @@ Los repo son interfaces que son responsables de la persistencia y recuperación 
 
 ### Service
 
-La capa de servicio depende de la capa de repositorio, encapsulando toda la implementación de la lógica empresarial. Está allí para aplicar reglas de negocio sobre los datos enviados hacia y desde la capa del repo. La capa de servicio no se preocupa por la implementación específica de la base de datos y proporciona un bajo acoplamiento. En un eventual cambio de debase de datos esta estragia hace muy sencillo el poder realizarlo. Esta capa debe siempre recibe y devuelve DTO.
+La capa de servicio depende de la capa de repositorio, encapsulando toda la implementación de la lógica empresarial. Está allí para aplicar reglas de negocio sobre los datos enviados hacia y desde la capa del repo. 
+La capa de servicio no se preocupa por la implementación específica de la base de datos y proporciona un bajo acoplamiento. En un eventual cambio de debase de datos esta estragia hace muy sencillo el poder realizarlo. 
+Esta capa debe siempre recibe y devuelve DTO.
 
 ### Controller
 
