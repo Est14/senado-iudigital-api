@@ -81,5 +81,5 @@ El servidor comenzará a ejecutarse en http://localhost:8080.
 Cuando el servidor este corriendo, puede usar swagger para explorar los endpoints disponibles y probarlos. Encuéntralo en:
 http://localhost:8080/wh/swagger-ui.html#/
 
-# License
+# Licencia
 Este proyecto esta bajo licencia MIT. ver archivo LICENSE
