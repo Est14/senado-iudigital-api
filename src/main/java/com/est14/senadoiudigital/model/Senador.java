@@ -15,19 +15,20 @@ public class Senador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_senador")
-    private Integer id;
+    private Integer idSenador;
     private String nombre;
-    private String cedula;
     private Integer activo;
 
-    @OneToMany(mappedBy = "senador")
+    @OneToMany(mappedBy = "senador", fetch = FetchType.LAZY)
     private List<Voto> votos;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @JoinColumn(name = "idPartido")
     private Partido partido;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @JoinColumn(name = "idDepartamento")
     private Departamento departamento;
 }

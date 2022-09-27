@@ -30,7 +30,7 @@ public class ProyectoServiceImpl implements ProyectoService {
     }
 
     public Optional<Proyecto> update(Proyecto proyecto){
-        Optional<Proyecto> proyecto1 = getOne(proyecto.getId());
+        Optional<Proyecto> proyecto1 = getOne(proyecto.getIdProyecto());
 
         if(proyecto1.isEmpty()){
             return proyecto1;

@@ -31,12 +31,17 @@ public class SenadorServiceImpl implements SenadorService {
     }
 
     public Optional<Senador> update(Senador senador){
-        Optional<Senador> senador1 = getOne(senador.getId());
+        Optional<Senador> senador1 = getOne(senador.getIdSenador());
 
         if(senador1.isEmpty()){
             return senador1;
         }
         senador1.get().setNombre(senador.getNombre());
         return senador1;
+    }
+
+    @Override
+    public List<Senador> findByPartido(int id) {
+        return repo.findByIdPartido(id);
     }
 }

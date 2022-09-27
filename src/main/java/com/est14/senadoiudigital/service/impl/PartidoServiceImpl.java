@@ -30,7 +30,7 @@ public class PartidoServiceImpl implements PartidoService {
     }
 
     public Optional<Partido> update(Partido partido){
-        Optional<Partido> partido1 = getOne(partido.getId());
+        Optional<Partido> partido1 = getOne(partido.getIdPartido());
 
         if(partido1.isEmpty()){
             return partido1;

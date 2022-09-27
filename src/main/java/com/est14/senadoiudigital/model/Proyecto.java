@@ -15,11 +15,11 @@ public class Proyecto {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    @Column(name = "idproyecto")
-    private String id;
+    @Column(name = "id_proyecto")
+    private String idProyecto;
     private String nombre;
     private Date fecha;
-
+    private String descripcion;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore

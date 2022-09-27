@@ -18,15 +18,14 @@ public class Voto {
     private Integer id;
 
 
-
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @JoinColumn(name = "idProyecto")
     private Proyecto proyecto;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @JoinColumn(name = "idSenador")
     private Senador senador;
 
 }
