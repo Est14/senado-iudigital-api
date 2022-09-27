@@ -17,16 +17,11 @@ relaciones entre unos y otros. JPA utiliza todas estas anotaciones para asignar 
 
 ### DTO
 
-DTO significa **Objeto de transferencia de datos** y lo utilizamos para desacoplar la capa del modelo del lado del cliente.
-Hay muchos enfoques sobre este tema, pero en mi opinión, el más limpio es transferir solo los datos necesarios mediante DTO, en lugar de
-poblando todo el modelo. Para proyectos pequeños (como este), es común que un DTO sea idéntico al modelo correspondiente. Los DTO
-representan los datos entrantes y salientes que manejan nuestras aplicaciones. Para aplicaciones con mayor lógica de negocios, es posible
-crear dos o más DTO independientes (por ejemplo, representación de datos de solicitud y respuesta).
+DTO significa **Objeto de transferencia de datos** y lo utilizamos para desacoplar la capa del modelo del lado del cliente. Hay muchos enfoques sobre este tema, pero en mi opinión, el más limpio es transferir solo los datos necesarios mediante DTO, en lugar de poblando todo el modelo. Para proyectos pequeños (como este), es común que un DTO sea idéntico al modelo correspondiente. Los DTO representan los datos entrantes y salientes que manejan nuestras aplicaciones. Para aplicaciones con mayor lógica de negocios, es posible crear dos o más DTO independientes (por ejemplo, representación de datos de solicitud y respuesta).
 
 ### Repo
 
-Los repo son interfaces que son responsables de la persistencia y recuperación de datos. La capa de repo es una abstracción que proporciona el
-CRUD y mantiene oculta la información relacionada con los datos (por ejemplo, la implementación de una base de datos específica) de las otras capas. esta capa siempre deben persistir las entidades.
+Los repo son interfaces que son responsables de la persistencia y recuperación de datos. La capa de repo es una abstracción que proporciona el CRUD y mantiene oculta la información relacionada con los datos (por ejemplo, la implementación de una base de datos específica) de las otras capas. Esta capa siempre deben persistir las entidades.
 
 ### Service
 
