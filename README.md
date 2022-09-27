@@ -5,7 +5,7 @@ Este proyecto se construyo usando **Java 11** y las siguientes herramientas:
 - [Hibernate](https://hibernate.org/) como ORM / JPA implementacion
 - [MySQL](https://www.mysql.com/) como base de datos
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa) como capa de comunicacion con DB
-- [Flyway](https://flywaydb.org/) as db migration tool
+
 
 # Application Structure
 
