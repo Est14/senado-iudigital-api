@@ -47,6 +47,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>io.fusionauth</groupId>
+			<artifactId>fusionauth-jwt</artifactId>
+			<version>5.2.1</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

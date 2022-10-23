@@ -8,7 +8,7 @@ import com.est14.senadoiudigital.model.Senador;
 import com.est14.senadoiudigital.repo.DepartamentoRepo;
 import com.est14.senadoiudigital.service.PartidoService;
 import com.est14.senadoiudigital.service.SenadorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +18,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/senado-iudigital/api")
+@RequiredArgsConstructor
 public class PartidoController {
 
     private final PartidoService service;
     private final SenadorService senadorService;
     private final DepartamentoRepo departamentoRepo;
 
-
-    @Autowired
-    public PartidoController(PartidoService service, SenadorService senadorService, DepartamentoRepo departamentoRepo) {
-        this.service = service;
-        this.senadorService = senadorService;
-        this.departamentoRepo = departamentoRepo;
-    }
 
     @GetMapping("/partidos")
     public ResponseEntity<List<Partido>> getAll(){
@@ -65,6 +59,9 @@ public class PartidoController {
         }
     }
 
+
+
+    // Start Senators
     @GetMapping("/partidos/{id}/senadores")
     public ResponseEntity<List<Senador>> getSenadores(@PathVariable int id){
         return new ResponseEntity<>(senadorService.findByPartido(id), HttpStatus.OK);

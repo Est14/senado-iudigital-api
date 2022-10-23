@@ -3,12 +3,14 @@ package com.est14.senadoiudigital.service.impl;
 import com.est14.senadoiudigital.model.Partido;
 import com.est14.senadoiudigital.repo.PartidoRepo;
 import com.est14.senadoiudigital.service.PartidoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class PartidoServiceImpl implements PartidoService {
 
     private final PartidoRepo partidoRepo;
