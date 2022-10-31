@@ -1,9 +1,12 @@
 package com.est14.senadoiudigital.dto;
 
+import com.est14.senadoiudigital.security.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,6 +17,6 @@ public class UsuarioDto {
     private Integer idUsuario;
     private String nombre;
     private String email;
-    private String role;
+    private List<Role> role;
 
 }

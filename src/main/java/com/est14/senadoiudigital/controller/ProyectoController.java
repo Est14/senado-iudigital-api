@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/senado-iudigital-api")
+@RequestMapping("/senado-iudigital/api")
 @RequiredArgsConstructor
 public class ProyectoController {
 

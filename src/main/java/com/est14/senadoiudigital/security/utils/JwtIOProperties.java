@@ -1,4 +1,4 @@
-package com.est14.senadoiudigital.config.security;
+package com.est14.senadoiudigital.security.utils;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 
+// This class match with properties attributes
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "est14.jwt")
