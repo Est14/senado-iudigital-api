@@ -1,5 +1,6 @@
 package com.est14.senadoiudigital.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,9 +15,10 @@ public class Proponente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_proponente")
-    private Integer id;
+    private Integer idProponente;
     private String nombre;
 
-    @OneToMany(mappedBy = "proponente")
+    @OneToMany(mappedBy = "proponente", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Proyecto> proyectos;
 }

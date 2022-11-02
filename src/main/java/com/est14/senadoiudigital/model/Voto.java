@@ -16,6 +16,7 @@ public class Voto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_voto")
     private Integer id;
+    private String voto;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -23,8 +24,7 @@ public class Voto {
     @JoinColumn(name = "idProyecto")
     private Proyecto proyecto;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @ManyToOne()
     @JoinColumn(name = "idSenador")
     private Senador senador;
 

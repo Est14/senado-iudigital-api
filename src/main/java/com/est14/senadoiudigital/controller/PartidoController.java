@@ -11,6 +11,7 @@ import com.est14.senadoiudigital.service.SenadorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,10 @@ public class PartidoController {
     private final SenadorService senadorService;
     private final DepartamentoRepo departamentoRepo;
 
+    @GetMapping("/")
+    public ResponseEntity<String> bienvenido(){
+        return new ResponseEntity<>("Bienvenido al Web Service IU Digital Senado", HttpStatus.OK);
+    }
 
     @GetMapping("/partidos")
     public ResponseEntity<List<Partido>> getAll(){
@@ -38,6 +43,7 @@ public class PartidoController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/partidos")
     public ResponseEntity<Partido> create(@RequestBody Partido partido){
 
@@ -49,6 +55,7 @@ public class PartidoController {
                 .orElse(new ResponseEntity<>(HttpStatus.BAD_REQUEST));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/partidos/{id}")
     public void delete(@PathVariable int id){
         Optional<Partido> partido = service.getOne(id);
@@ -58,7 +65,6 @@ public class PartidoController {
             service.create(partido.get());
         }
     }
-
 
 
     // Start Senators
@@ -78,6 +84,7 @@ public class PartidoController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/partidos/{id}/senadores")
     public ResponseEntity<Senador> create(@PathVariable int id, @RequestBody SenadorDto senadorDTO){
 

@@ -20,6 +20,7 @@ public class Senador {
     private Integer activo;
 
     @OneToMany(mappedBy = "senador", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Voto> votos;
 
     @ManyToOne(fetch = FetchType.LAZY)

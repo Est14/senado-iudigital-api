@@ -1,5 +1,6 @@
 package com.est14.senadoiudigital.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,15 +10,16 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "estado_proyecto")
-public class EstadoProyecto {
+public class Estado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idestado_proyecto")
-    private Integer id;
+    private Integer idEstado;
     private String estado;
 
-    @OneToMany(mappedBy = "estadoProyecto")
+    @OneToMany(mappedBy = "estado", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Proyecto> proyectos;
+
+
 }

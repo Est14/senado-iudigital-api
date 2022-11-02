@@ -13,21 +13,22 @@ import java.util.List;
 @NoArgsConstructor
 public class Proyecto {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_proyecto")
-    private String idProyecto;
+    private Integer idProyecto;
     private String nombre;
     private Date fecha;
     private String descripcion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @ManyToOne()
+    @JoinColumn(name = "idEstado")
+    private Estado estado;
+
+    @ManyToOne()
+    @JoinColumn(name = "idProponente")
     private Proponente proponente;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
-    private EstadoProyecto estadoProyecto;
 
     @OneToMany(mappedBy = "proyecto")
     private List<Voto> votos;
