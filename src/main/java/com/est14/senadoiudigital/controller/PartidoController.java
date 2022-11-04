@@ -26,7 +26,7 @@ public class PartidoController {
     private final SenadorService senadorService;
     private final DepartamentoRepo departamentoRepo;
 
-    @GetMapping("/")
+    @GetMapping("/inicio")
     public ResponseEntity<String> bienvenido(){
         return new ResponseEntity<>("Bienvenido al Web Service IU Digital Senado", HttpStatus.OK);
     }

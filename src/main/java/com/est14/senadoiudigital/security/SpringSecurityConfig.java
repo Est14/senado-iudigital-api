@@ -44,7 +44,6 @@ public class SpringSecurityConfig {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/senado-iudigital/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
