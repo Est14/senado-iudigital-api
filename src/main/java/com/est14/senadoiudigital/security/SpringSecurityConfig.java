@@ -37,13 +37,13 @@ public class SpringSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager manager) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 
-        return http
+        return http.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/senado-iudigital/auth/**").permitAll()
+                .antMatchers("/senado-iudigital/auth/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
